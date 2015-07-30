@@ -1,3 +1,13 @@
+node_modules
+.tmp
+dist
+app/vendor
+.tmp/
+.idea
+*.iml
+.DS_Store
+.sass-cache/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -55,3 +65,5 @@ docs/_build/
 
 # PyBuilder
 target/
+
+.idea

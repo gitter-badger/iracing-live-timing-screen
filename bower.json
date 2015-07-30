@@ -1,0 +1,12 @@
+{
+	"name": "iracing-live-timing-screen",
+	"version": "",
+	"dependencies": {
+		"angular": "",
+		"angular-ui-router": "0.2.10"
+	},
+	"devDependencies": {
+		
+	}
+}
+
