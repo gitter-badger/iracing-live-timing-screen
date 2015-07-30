@@ -1,5 +1,19 @@
-.message {
-    color : white;
-    background-color: #27ae60;
-    padding: 20px 30px;
+body {
+    background-color: black;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.header {
+    color: white;
+    width: 90px;
+    padding-left: 20px;
+    padding-right: 20px;
 }

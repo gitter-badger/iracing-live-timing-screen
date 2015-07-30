@@ -1,17 +1,11 @@
-import socketserver
+from wsgiref.simple_server import make_server
+from ws4py.websocket import EchoWebSocket
+from ws4py.server.wsgirefserver import WSGIServer, WebSocketWSGIRequestHandler
+from ws4py.server.wsgiutils import WebSocketWSGIApplication
 
+server = make_server('', 9997, server_class=WSGIServer,
+                     handler_class=WebSocketWSGIRequestHandler,
+                     app=WebSocketWSGIApplication(handler_cls=EchoWebSocket))
 
-class TCPHandler(socketserver.BaseRequestHandler):
-
-    def handle(self):
-        self.data = self.request.recv(1024).strip()
-        print("{} wrote:".format(self.client_address[0]))
-        print(self.data)
-        self.request.sendall(self.data.upper())
-
-if __name__ == "__main__":
-    HOST, PORT = "localhost", 9997
-
-    server = socketserver.TCPServer((HOST, PORT), TCPHandler)
-
-    server.serve_forever()
+server.initialize_websockets_manager()
+server.serve_forever()
