@@ -1,11 +1,16 @@
-from wsgiref.simple_server import make_server
-from ws4py.websocket import EchoWebSocket
-from ws4py.server.wsgirefserver import WSGIServer, WebSocketWSGIRequestHandler
-from ws4py.server.wsgiutils import WebSocketWSGIApplication
 
-server = make_server('', 9997, server_class=WSGIServer,
-                     handler_class=WebSocketWSGIRequestHandler,
-                     app=WebSocketWSGIApplication(handler_cls=EchoWebSocket))
+import asyncio
+import websockets
 
-server.initialize_websockets_manager()
-server.serve_forever()
+@asyncio.coroutine
+def hello(websocket, path):
+    name = yield from websocket.recv()
+    print("< {}".format(name))
+    greeting = "Hello {}!".format(name)
+    yield from websocket.send(greeting)
+    print("> {}".format(greeting))
+
+start_server = websockets.server.serve(hello, 'localhost', 8765)
+
+asyncio.get_event_loop().run_until_complete(start_server)
+asyncio.get_event_loop().run_forever()

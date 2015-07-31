@@ -6,7 +6,8 @@
     "angular-ui-router": "0.2.10",
     "angular-bootstrap": "~0.13.1",
     "ng-websocket": "~0.2.1",
-    "flexboxgrid": "~6.2.0"
+    "flexboxgrid": "~6.2.0",
+    "bootstrap": "~3.3.5"
   },
   "devDependencies": {}
 }

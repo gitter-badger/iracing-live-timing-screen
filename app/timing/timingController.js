@@ -1,13 +1,11 @@
 angular
     .module('iracing-live-timing-screen')
-    .controller('timingController', timingController);
-
-function timingController($websocket) {
-    var vm = this;
-
-    var ws = $websocket.$new('ws://localhost:9997');
-    ws.$on('$open', function() {
-        console.log('Websocket is open!');
-        ws.$emit('ping', 'hi server');
-    })
-}
+    .run(function($websocket){
+        var ws = $websocket.$new({
+            url: 'ws://localhost:8765',
+            lazy: false
+        })
+            .$on('$open', function() {
+                console.log($ws.$status());
+            });
+    });

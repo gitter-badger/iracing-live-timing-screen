@@ -3,17 +3,53 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
 }
+
+table {
+    width: 100%;
+    color: white;
+}
+
 
 .header {
     color: white;
     width: 90px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bolder;
+}
+
+.header-item-p {
+    color: #67F7E0;
+    width: 30px;
+}
+
+.header-p {
+    width: 30px;
+}
+
+.header-name {
+    width: 150px;
+}
+
+.header-gap {
+    width: 40px;
+}
+
+.header-interval {
+    width: 175px;
+}
+
+.header-sector {
+    width: 175px;
+}
+
+.header-sector3 {
+    width: 80px;
+}
+
+.header-lap {
+    color: #F2FD3C;
 }
