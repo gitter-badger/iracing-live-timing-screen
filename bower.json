@@ -5,7 +5,7 @@
     "angular": "",
     "angular-ui-router": "0.2.10",
     "angular-bootstrap": "~0.13.1",
-    "ng-websocket": "~0.2.1",
+    "ng-websocket": "git://github.com/wilk/ng-websocket.git#master",
     "flexboxgrid": "~6.2.0",
     "bootstrap": "~3.3.5"
   },
