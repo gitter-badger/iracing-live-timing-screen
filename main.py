@@ -1,7 +1,8 @@
 #
 import irsdk
-import json
 
+SESSION_STATE_QUALIFY = "Qualify"
+SESSION_STATE_RACE = "Race"
 
-def session_fastest_time():
-    pass
+ir = irsdk.IRSDK(test_file='data.bin')
+ir.startup()
