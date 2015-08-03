@@ -1,0 +1,31 @@
+<div class="container">
+    <table class="table borderless" align="center">
+        <thead>
+            <tr>
+                <th class="col-md-1">P</th>
+                <th class="col-md-2">Name</th>
+                <th class="col-md-1">Gap</th>
+                <th class="col-md-1">Interval</th>
+                <th class="col-md-1"></th>
+                <th class="col-md-1">Sector 1</th>
+                <th class="col-md-1">Sector 2</th>
+                <th class="col-md-1">Sector 3</th>
+                <th class="col-md-1">Pit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--<tr ng-repeat="driver in timing.drivers">
+                <th style="color: #67F7E0">{{ driver.Position }}</th>
+                <td>15 A. GARCIA CRUZ</td>
+                <th>{{ driver.FastestTime }}</th>
+                <th></th>
+                <th>1:33.717</th>
+                <th>31.3</th>
+                <th>24.7</th>
+                <th>37.6</th>
+                <th>1</th>
+            </tr>-->
+        </tbody>
+    </table>
+</div>
+<div ng-repeat="driver in timing.drivers">{{driver}}</div>

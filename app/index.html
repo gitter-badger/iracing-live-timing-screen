@@ -14,63 +14,8 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:900' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
 </head>
-<body ng-controller="timingController as timing">
-<!--<div class="container" style="background-color: ;">-->
-    <!--<h4 class="header header-p">P</h4>-->
-    <!--<h4 class="header header-name">Name</h4>-->
-    <!--<h4 class="header header-gap">Gap</h4>-->
-    <!--<h4 class="header header-interval">Interval</h4>-->
-    <!--<h4 class="header header-sector">Sector 1</h4>-->
-    <!--<h4 class="header header-sector">Sector 2</h4>-->
-    <!--<h4 class="header header-sector3">Sector 3</h4>-->
-    <!--<h4 class="header">Pit</h4>-->
-<!--</div>-->
-<!--<div class="container" style="background-color: ">-->
-    <!--<h4 class="header header-item-p">1</h4>-->
-    <!--<h4 class="header">15 A. SUTIL</h4>-->
-    <!--<h4 class="header header-lap">LAP</h4>-->
-<!--</div>-->
-<div class="container">
-    <table class="table borderless" align="center">
-        <thead>
-            <tr>
-                <th class="col-md-1">P</th>
-                <th class="col-md-2">Name</th>
-                <th class="col-md-1">Gap</th>
-                <th class="col-md-1">Interval</th>
-                <th class="col-md-1"></th>
-                <th class="col-md-1">Sector 1</th>
-                <th class="col-md-1">Sector 2</th>
-                <th class="col-md-1">Sector 3</th>
-                <th class="col-md-1">Pit</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th style="color: #67F7E0">1</th>
-                <td>15 A. GARCIA CRUZ</td>
-                <th>LAP</th>
-                <th>20</th>
-                <th>1:33.717</th>
-                <th>31.3</th>
-                <th>24.7</th>
-                <th>37.6</th>
-                <th>1</th>
-            </tr>
-            <tr>
-                <th style="color: #67F7E0">2</th>
-                <th>15 A. SUTIL</th>
-                <th>LAP</th>
-                <th>20</th>
-                <th> 1:33.717</th>
-                <th>31.3</th>
-                <th>24.7</th>
-                <th>37.6</th>
-                <th>1</th>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<body>
+<section ui-view></section>
 
 <!-- build:js js/iracing-live-timing-screen.js -->
 <!-- bower:js -->
@@ -81,6 +26,7 @@
 <!-- endbower -->
 <script type="text/javascript" src="app.js"></script>
 <script type="text/javascript" src="app.config.js"></script>
+<script type="text/javascript" src="app.route.js"></script>
 <script type="text/javascript" src="timing/timingController.js"></script>
 <!-- endbuild -->
 

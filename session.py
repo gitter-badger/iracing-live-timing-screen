@@ -1,5 +1,5 @@
 #
-class Session():
+class Session:
     """
     Session object
     """
@@ -10,7 +10,7 @@ class Session():
 
     def session_state_qualify(self):
         """
-        :return: True if session state is Qualify or Lone Qualify
+        :return: True if  iRacing session state is Qualify or Lone Qualify
         """
         if "Qualify" in self.ir['SessionInfo']['Sessions'][self.ir['SessionNum']]['SessionType']:
             return True
