@@ -1,20 +1,27 @@
 import logging
 import asyncio
+import json
+
 import websockets
 import irsdk
-import json
+
+import session
 
 logger = logging.getLogger('websockets')
 logger.setLevel(logging.INFO)
 logger.addHandler(logging.StreamHandler())
 
+ir = irsdk.IRSDK()
+ir.startup(test_file='data.bin')
+Session = session.Session(ir)
+Session.update_classification()
+
 @asyncio.coroutine
 def hello(websocket, path):
     message = yield from websocket.recv()
-    #message = json.loads(message)['data']
     print("< {}".format(message), path)
-    yield from websocket.send(message)
-    print("> {}".format(message))
+    yield from websocket.send(json.dumps(Session.classification))
+    print("> {}".format(json.dumps(Session.classification)))
 
 start_server = websockets.server.serve(hello, 'localhost', 8765)
 
