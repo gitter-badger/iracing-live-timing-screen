@@ -12,7 +12,7 @@ function timingController($websocket, timingFactory, $scope) {
         console.log('Connection:' + ws.$status());
     });
 
-    ws.$on('ping', function (data) {
+    ws.$on('getStandings', function (data) {
         data.forEach(function (item) {
             timing.drivers.push(item);
         });
