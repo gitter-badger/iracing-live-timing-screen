@@ -5,7 +5,7 @@ class Session:
     """
 
     def __init__(self, ir):
-        self.classification = {'event': 'ping', 'data': []}
+        self.classification = {'event': 'getStandings', 'data': []}
         self.ir = ir
 
     def session_state_qualify(self):
@@ -25,4 +25,11 @@ class Session:
                 'CarIdx': driver['CarIdx'],
                 'Position': driver['Position'],
                 'FastestTime': '{}:{}'.format(int(m), str(s)[:6]),
+                'UserName': self.get_driver_name(driver['CarIdx'])
             })
+
+    def get_driver_name(self, idx):
+        # TODO make a Driver class?
+        for driver in self.ir['DriverInfo']['Drivers']:
+            if driver['CarIdx'] == idx:
+                return driver['UserName']
